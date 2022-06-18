@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(112, 112, 150);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  margin: 65px 0;
+}
+
+.container-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: minmax(100px, auto) repeat(5, 100px);
+  grid-template-columns: repeat(4, 100px);
+  width: 400px;
+  height: 550px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.display {
+  grid-column: 1 / -1;
+  background-color: rgb(34, 34, 34);
+  border: 2px solid black;
+  height: 125px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 12px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .prev-operand {
+  font-size: 1.75rem;
+  color: white;
+}
+
+.display .current-operand {
+  font-size: 3rem;
+  color: white;
+}
+
+.container-grid > button {
+  display: grid;
+  cursor: pointer;
+  border: 1px solid black;
+  align-items: center;
+  font-size: larger;
+}
+
+.container-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.span-two {
+  grid-column: span 2;
+}
