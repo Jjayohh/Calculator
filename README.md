@@ -1,3 +1,1 @@
 # Calculator
-
-# Work in Progress
