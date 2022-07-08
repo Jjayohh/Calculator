@@ -20,8 +20,13 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
-  addplusMinus(number) {
-    this.currentOperand = this.currentOperand.toString().unshift("-");
+  addPlusMinus() {
+    if (parseFloat(this.currentOperand) > 0) {
+      this.currentOperand = parseFloat(this.currentOperand) * -1;
+      this.currentOperand = this.currentOperand.toString();
+    } else if (this.currentOperand.includes("-")) {
+      this.currentOperand = this.currentOperand.substring(1);
+    }
   }
 
   chooseOperation(operation) {
@@ -137,6 +142,6 @@ deleteButton.addEventListener("click", (button) => {
 });
 
 plusMinusButton.addEventListener("click", (button) => {
-  calculator.addplusMinus();
+  calculator.addPlusMinus();
   calculator.displayUpdate();
 });
